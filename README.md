@@ -7,7 +7,7 @@
 ## Прогресс:
 
 | Номер | Контест |
-|---|---|---|
+|---|---|
 |1B|[Сложность, тестирование, особые случаи](https://contest.yandex.ru/contest/28730/enter/)
 |2B|[Линейный поиск](https://contest.yandex.ru/contest/28738/enter/)
 |3B|[Множества](https://contest.yandex.ru/contest/28964/enter/)
