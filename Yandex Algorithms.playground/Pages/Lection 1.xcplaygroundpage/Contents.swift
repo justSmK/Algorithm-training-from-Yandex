@@ -1,4 +1,9 @@
 /*:
+ # Лекция 1: «Сложность, тестирование, особые случаи»
+ # Lecture 1: "Complexity, Testing, Special Cases"
+ */
+
+/*:
  ### Дана строка в кодировке UTF-8
  ### A string in UTF-8 encoding is given
  
