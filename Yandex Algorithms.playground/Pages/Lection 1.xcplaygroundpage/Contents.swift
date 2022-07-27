@@ -6,6 +6,8 @@
  ### Find the most frequent character in it. If several characters are equally frequent, any character can be printed
  */
 
+import Darwin
+
 let stringTask1 = "ababa"
 
 /*:
@@ -102,8 +104,16 @@ func mostCommonSymbol3(string: String) -> Character {
             dictionary[now] = 0
         }
         dictionary[now]! += 1
-        
     }
+    
+//    for now in string {
+//        if !dictionary.contains(where: { element in
+//            element.key == now
+//        }){
+//            dictionary[now] = 0
+//        }
+//        dictionary[now]! += 1
+//    }
     
     for (key, value) in dictionary {
         if value > resCount {
@@ -116,3 +126,116 @@ func mostCommonSymbol3(string: String) -> Character {
 }
 
 mostCommonSymbol3(string: stringTask1)
+
+/*:
+ ### Сумма последовательности
+ ### Sum of the sequence
+ */
+
+func sumOfSeq(string: String) -> Int {
+    let sequence = string.split(separator: " ").map { element -> Int in
+        var result = Int()
+        if (Int(element) != nil) {
+            result = Int(element)!
+        }
+        return result
+    }
+    
+    var sumSeq = 0
+    
+    for i in sequence {
+        sumSeq += i
+    }
+    
+    return sumSeq
+}
+
+let stringSumSeq = "1 2 3 4 5"
+sumOfSeq(string: stringSumSeq)
+
+/*:
+ ### Максимум последовательности
+ ### Max of the sequence
+ */
+
+func maxOfSeq(string: String) -> Int? {
+    let sequence = string.split(separator: " ").map { element -> Int in
+        var result = Int()
+        if (Int(element) != nil) {
+            result = Int(element)!
+        }
+        return result
+    }
+    
+    if sequence.count == 0 {
+        return nil
+    }
+    
+    var seqMax: Int = sequence.first!
+    
+    for i in sequence {
+        if i > seqMax {
+            seqMax = i
+        }
+    }
+    
+    return seqMax
+}
+
+let stringMaxSeq = "-1 2 -3 4 -5"
+maxOfSeq(string: stringMaxSeq)
+
+/*:
+ ### Квадаратное уравнение
+ ### Quadratic equation
+ 
+ Задача: даны три целых числа a, b, c.
+ Найдите все корни уравнения ax^2 + bx + c = 0 и выделите их в порядке возрастания
+ 
+ Problem: There are three integers a, b, c.
+ Find all roots of the equation ax^2 + bx + c = 0 and select them in ascending order
+ 
+ D = b^2 - 4ac
+ x1,2 = (-b +- sqr(D)) / 2a
+ D = 0
+ */
+
+/*:
+ ### Решение
+ ### Solution
+ */
+
+func quadraticEquation(a: Double, b: Double, c: Double) -> (Double?, Double?) {
+    if a == 0 {
+        if b != 0 {
+            let x = -c / b
+            return (x, nil)
+        }
+        if b == 0 && c == 0 {
+            return (Double.infinity, nil)
+        }
+    } else {
+        let d = b * b - 4 * a * c
+        if d == 0 {
+            let x1 = -b / (2 * a)
+            return (x1, nil)
+        } else if (d > 0) {
+            let x1 = (-b - sqrt(d)) / (2 * a)
+            let x2 = (-b + sqrt(d)) / (2 * a)
+            var result = (x1, x2)
+            if x1 < x2 {
+                return result
+            } else {
+                result = (x2, x1)
+            }
+            return result
+        }
+    }
+    return (nil, nil)
+}
+
+let a = -5
+let b = 4
+let c = 1
+quadraticEquation(a: Double(a), b: Double(b), c: Double(c))
+
