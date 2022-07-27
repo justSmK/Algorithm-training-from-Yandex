@@ -4,8 +4,6 @@
 
 ### [Тренировки по алгоритмам](https://yandex.ru/yaintern/algorithm-training)
 
-## Прогресс:
-
 | Номер | Контест |
 |---|---|
 |1B|[Сложность, тестирование, особые случаи](https://contest.yandex.ru/contest/28730/enter/)
