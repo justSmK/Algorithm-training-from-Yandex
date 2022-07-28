@@ -244,3 +244,72 @@ let b = 4
 let c = 1
 quadraticEquation(a: Double(a), b: Double(b), c: Double(c))
 
+import XCTest
+class Tests: XCTestCase {
+    
+    func test1() {
+        let expectedResult: (Double?, Double?) = (0.0, 2.0)
+        let a = 1
+        let b = -2
+        let c = 0
+        let result = quadraticEquation(a: Double(a), b: Double(b), c: Double(c))
+        XCTAssertTrue(result == expectedResult, "Failed. Result = \(result)")
+    }
+    
+    func test2() {
+        let expectedResult: (Double?, Double?) = (-1.0, nil)
+        let a = 1
+        let b = 2
+        let c = 1
+        let result = quadraticEquation(a: Double(a), b: Double(b), c: Double(c))
+        XCTAssertTrue(result == expectedResult, "Failed. Result = \(result)")
+    }
+    
+    func test3() {
+        let expectedResult: (Double?, Double?) = (nil, nil)
+        let a = 1
+        let b = 1
+        let c = 1
+        let result = quadraticEquation(a: Double(a), b: Double(b), c: Double(c))
+        XCTAssertTrue(result == expectedResult, "Failed. Result = \(result)")
+    }
+    
+    func test4() {
+        let expectedResult: (Double?, Double?) = (-1.0, nil)
+        let a = 0
+        let b = 1
+        let c = 1
+        let result = quadraticEquation(a: Double(a), b: Double(b), c: Double(c))
+        XCTAssertTrue(result == expectedResult, "Failed. Result = \(result)")
+    }
+    
+    func test5() {
+        let expectedResult: (Double?, Double?) = (nil, nil)
+        let a = 0
+        let b = 0
+        let c = 1
+        let result = quadraticEquation(a: Double(a), b: Double(b), c: Double(c))
+        XCTAssertTrue(result == expectedResult, "Failed. Result = \(result)")
+    }
+    
+    func test6() {
+        let expectedResult: (Double?, Double?) = (Double.infinity, nil)
+        let a = 0
+        let b = 0
+        let c = 0
+        let result = quadraticEquation(a: Double(a), b: Double(b), c: Double(c))
+        XCTAssertTrue(result == expectedResult, "Failed. Result = \(result)")
+    }
+    
+    func test7() {
+        let expectedResult: (Double?, Double?) = (-0.2, 1.0)
+        let a = -5
+        let b = 4
+        let c = 1
+        let result = quadraticEquation(a: Double(a), b: Double(b), c: Double(c))
+        XCTAssertTrue(result == expectedResult, "Failed. Result = \(result)")
+    }
+    
+}
+
+Tests.defaultTestSuite.run()
